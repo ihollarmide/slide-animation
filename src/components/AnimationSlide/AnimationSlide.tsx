@@ -53,20 +53,15 @@ export default function AnimationSlide() {
             />
           ))}
         </div>
-        <div className="hidden md:block min-h-[500px] relative">
+        <div className="hidden md:block min-h-[400px] relative">
           <AnimatePresence mode="sync">
-            {activeIndex === 0 ?
-              <m.div className="absolute top-0 left-0 w-full" key={'first-image'} variants={fadeVariants} initial="initial" animate={'animate'} exit='exit'>
-                <Image src={'/images/collaborate-together.png'} alt={'Collaborate together'} width={1368} height={1000} />
-              </m.div>
-            : activeIndex === 1 ?
-            <m.div className="absolute top-0 left-0 w-full" key={'second-image'} variants={fadeVariants} initial="initial" animate={'animate'} exit='exit'>
-              <Image src={'/images/plan-together.png'} alt={'Plan together'} width={1369} height={1001} />
-            </m.div> :
-            activeIndex === 2 ?
-            <m.div className="absolute top-0 left-0 w-full" key={'third-image'} variants={fadeVariants} initial="initial" animate={'animate'} exit='exit'>
-              <Image src={'/images/ideate-together.png'} alt={'Ideate together'} width={1369} height={1001} />
-            </m.div> : null}
+            {slides.map((slide, index) => (
+              activeIndex === index && (
+                <m.div className="absolute top-0 left-0 w-full h-full flex items-center justify-center" key={slide.title} variants={fadeVariants} initial="initial" animate='animate' exit='exit'>
+                  <Image src={slide.image} alt={slide.title} width={1368} height={1000} />
+                </m.div>
+              )
+            ))}
           </AnimatePresence>
         </div>
       </section>

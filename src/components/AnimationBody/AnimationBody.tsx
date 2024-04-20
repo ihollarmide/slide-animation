@@ -38,7 +38,7 @@ export default function AnimationBody({
           <div className="overflow-hidden">
             <div className="pt-5">
               <p className="text-base leading-5 text-gray-500 font-normal">{body}</p>
-              <div className="pt-5 sm:hidden">
+              <div className="pt-5 md:hidden">
                 <Image src={image} alt={title} width={1369} height={1001} className="w-full h-auto" />
               </div>
               

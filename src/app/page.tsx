@@ -1,5 +1,4 @@
 import { AnimationSlide } from "@/components/AnimationSlide";
-import Image from "next/image";
 
 export default function Home() {
   return (
